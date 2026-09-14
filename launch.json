@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run encoder",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/meowcode",
+            "args": [
+		"encode", "--boring", "Meow"
+	    ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "rust-gdb",
+            "dap-compilation": "cargo build",
+            "dap-compilation-dir": "${workspaceFolder}"
+        },
+        {
+            "name": "Run decoder",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/debug/meowcode",
+            "args": [
+		"decode",
+		"--meow",
+		"':meow-smug: :meow-shocked: :meow-sleepy: :meow-sad: :meow-sleepy: :meow-coffee: :meow-beer: :meow-beer: :meow_dead: :meow: :meow-sleepy: :meow-sleepy: :meow-beer: :meow_dead: :meow-sleepy: :meow-coffee: :meow-sleepy: :meow-shocked: :meow_dead: :meow: :meow-beer: :meow-smug: :meow-sleepy: :meow-give: :meow-sleepy: :meow-sad: :meow_dead: :meow: :meow-beer: :meow-beer: :meow-sleepy: :meow-coffee: :meow-beer: :meow_dead: :meow-sleepy: :meow-shy: :meow-sleepy: :meow-smug: :meow_dead: :meow: :meow-sleepy: :meow-coffee: :meow-sleepy: :meow-sleepy: :meow_dead: :meow: :meow-smug: :meow-shocked: :meow-sleepy: :meow-sad: :meow-sleepy: :meow-coffee: :meow-beer: :meow-beer: :meow-beer: :meow_code: :meow-sleepy: :meow-smart: :meow-sleepy: :meow-sad: :meow-beer: :meow_code: :meow_dead: :meow_heart:'"
+	    ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "rust-gdb",
+            "dap-compilation": "cargo build --release",
+            "dap-compilation-dir": "${workspaceFolder}"
+        }
+    ]
+}
