@@ -6,6 +6,8 @@ fn split_nybbles(char: &u8) -> (u8, u8) {
     return (char >> 4, char & 0x0F);
 }
 
+// FIXME: Figure out something so that this is a bidirectional hash.
+
 fn map_nybble_to_meow(byte: u8) -> String {
     let result = match byte {
         0u8 => ":meow:",
@@ -62,6 +64,9 @@ fn character_to_meow_meow(character: &u8) -> String {
 }
 
 fn decode_to_boring(meow: &String) {
+    // FIXME: Instead of take a &String as an argument,
+    // take a stdio.reader instead and stream bytes.
+
     let regex = Regex::new(":*:").unwrap();
     let mut pair: Vec<u8> = Vec::new();
     for token in regex.split(meow) {
@@ -86,6 +91,7 @@ fn encode_to_meows(boring: &String) {
     }
 }
 
+// FIXME: Change this so that boring and meow are not needed
 #[derive(Subcommand, Debug)]
 enum Commands {
     Encode {
