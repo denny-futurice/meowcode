@@ -13,3 +13,9 @@ wheels/
 # Added by cargo
 
 /target
+
+# Emacs
+
+*~
+*#*
+
