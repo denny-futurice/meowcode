@@ -35,6 +35,16 @@ Tests? Cat's don not test.
 
 There's .png's of the emoji's in `assets/` the file names need to match `NYBBLE_TO_MEOW` in `src/consts.rs`.
 
+## Cracker
+
+Just so you don't trust this, because who would trust a cat.
+
+A cracker and the claude session that generated it are included in `cracker/`
+
+## AI usage
+
+Meow's rolled by hand, the crack was done with Claude as an experiment to evaluate how long it would take.
+
 ## License
 
 WTFPL what else
