@@ -53,7 +53,6 @@ fn decode_from_stdio(key: u64, nonce: u64) -> io::Result<()> {
 #[derive(Subcommand, Debug)]
 enum Commands {
     Encode {
-        #[arg(short, long)]
         boring: String,
         #[arg(short, long)]
         kitty_enabled: bool,
@@ -63,7 +62,6 @@ enum Commands {
         nonce: u64,
     },
     Decode {
-        #[arg(long)]
         meow: String,
         #[arg(long, default_value_t = 0)]
         key: u64,
