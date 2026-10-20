@@ -20,15 +20,15 @@ pub fn map_meow_to_nybble(meow: &str) -> u8 {
 }
 
 pub fn character_to_meow_meow(character: &u8, kitty: &bool) -> String {
-    let (low, high) = split_nybbles(character);
+    let (high, low) = split_nybbles(character);
     if *kitty {
         format!(
             " {}  {} ",
-            emit_kitty_emoji(&map_nybble_to_meow(low)),
-            emit_kitty_emoji(&map_nybble_to_meow(high))
+            emit_kitty_emoji(&map_nybble_to_meow(high)),
+            emit_kitty_emoji(&map_nybble_to_meow(low))
         )
     } else {
-        format!("{} {}", map_nybble_to_meow(low), map_nybble_to_meow(high))
+        format!("{} {}", map_nybble_to_meow(high), map_nybble_to_meow(low))
     }
 }
 
