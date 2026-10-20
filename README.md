@@ -29,15 +29,19 @@ Kitty rendering of emoji's is supported with `--kitty-enabled` but is only pract
 
 Rust stable channel, cargo build, :meow-smug:.
 
-Tests? Cat's don not test.
+Tests? Cat's do not test.
 
-## Emoji Assets
+## Installing assets
 
-There's .png's of the emoji's in `assets/` the file names need to match `NYBBLE_TO_MEOW` in `src/consts.rs`.
+To make use of the kitty emoji output you need to install the assets.
+
+These get dumped to `${XDG_DATA_HOME}/meowcode/assets` (which is typically in `~/.local/share/`)
+
+To do so, run the included makefile `make install`.
 
 ## Cracker
 
-Just so you don't trust this, because who would trust a cat.
+Just so you don't trust this, because.. who would trust a cat?!
 
 A cracker and the claude session that generated it are included in `cracker/`
 

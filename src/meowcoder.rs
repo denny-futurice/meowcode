@@ -1,5 +1,5 @@
 use crate::bytewrangling::{combine_nybbles_to_byte, split_nybbles, whiten};
-use crate::consts::NYBBLE_TO_MEOW;
+use crate::consts::{ASSETS_DIR, NYBBLE_TO_MEOW};
 use kitty_image::{Action, ActionTransmission, Command, Format, Medium, WrappedCommand};
 use regex::Regex;
 
@@ -33,7 +33,7 @@ pub fn character_to_meow_meow(character: &u8, kitty: &bool) -> String {
 }
 
 pub fn emit_kitty_emoji(emoji: &str) -> String {
-    let emoji_file_path = format!("assets/{}.png", emoji.replace(":", ""));
+    let emoji_file_path = ASSETS_DIR.join(format!("{}.png", emoji.replace(':', "")));
     let wrapped_command = WrappedCommand::new(Command::with_payload_from_path(
         Action::TransmitAndDisplay(
             ActionTransmission {
@@ -45,7 +45,7 @@ pub fn emit_kitty_emoji(emoji: &str) -> String {
             },
             kitty_image::ActionPut::default(),
         ),
-        emoji_file_path.as_ref(),
+        &emoji_file_path,
     ));
     wrapped_command.to_string()
 }
